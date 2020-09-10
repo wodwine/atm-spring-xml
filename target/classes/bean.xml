@@ -5,7 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
     <bean id="dataSourceDB" class="th.ac.ku.atm.DataSourceDB"/>
-    <bean id="dataSourceFile" class="th.ac.ku.atm.DataSourceFile"/>
+    <bean id="dataSourceFile" class="th.ac.ku.atm.DataSourceFile">
+        <constructor-arg value="customers.txt"/>
+    </bean>
     <bean id="dataSourceWeb" class="th.ac.ku.atm.DataSourceWebAPI"/>
     <bean id="bank" class="th.ac.ku.atm.Bank">
         <constructor-arg value="Wine's Bank"/>

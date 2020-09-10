@@ -1,5 +1,8 @@
 package th.ac.ku.atm;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -7,6 +10,13 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class DataSourceFile implements DataSource {
+
+    private String filename;
+
+    public DataSourceFile(String filename) {
+        this.filename = filename;
+    }
+
     public Map<Integer, Customer> readCustomer() {
         // ...... connect to database ....  \\
         Map<Integer, Customer> customers = new HashMap<>();
